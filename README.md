@@ -1,9 +1,24 @@
 # Go-project
 
-## Downloads
+## 开发环境搭建
+### 安装
 [Go Windows](https://golang.google.cn/dl/)
 
-## hello.go
+### 配置环境变量
+1. Windows
+
+`我的电脑` -> `属性` -> `高级系统设置` -> `环境变量` -> `系统变量` -> `path` -> 复制bin路径 `...go\bin`
+
+2. Mac
+```sh
+vim ~/.bash_profile
+export PATH=$PATH:/usr/local/go/bin
+source ~/.bash_profile
+```
+
+## Code
+
+### hello.go
 ```go
 package main
 
@@ -14,7 +29,7 @@ func main() {
 }
 ```
 
-## linux
+### linux
 [Go Docs](https://golang.google.cn/doc/)
 
 ```
