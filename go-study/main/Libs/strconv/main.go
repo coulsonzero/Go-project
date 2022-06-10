@@ -15,4 +15,8 @@ func main() {
 	if s, err := strconv.ParseInt(v64, 10, 64); err == nil {
 		fmt.Printf("%T, %v\n", s, s) // int64, -3546343826
 	}
+
+	num := 14141
+	s := strconv.Itoa(num) // int -> string: "14141"
+	fmt.Printf(s)
 }

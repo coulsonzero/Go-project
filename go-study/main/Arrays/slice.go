@@ -1,6 +1,3 @@
-//go:build ignore
-// +build ignore
-
 package main
 
 import "fmt"
@@ -11,6 +8,10 @@ import "fmt"
  */
 
 func main() {
+
+}
+
+func test() {
 	list := make([]int, 3) // 初始默认值为0
 	fmt.Println(list)      // [0, 0, 0]
 	list = append(list, 1, 3)

@@ -3,6 +3,15 @@ package main
 import "fmt"
 
 func main() {
+	var (
+		name string = "John"
+		age  int    = 20
+	)
+	fmt.Printf("%s, %d", name, age) // John, 20
+
+}
+
+func test() {
 	// 1. 变量声明：未初始化时有默认值
 	var a int
 	// 2. 变量声明并初始化
@@ -27,4 +36,23 @@ func main() {
 
 	x, y := "john", 20
 	fmt.Println("name: ", x, "age: ", y)
+}
+
+func dataType() {
+	var (
+		name     string
+		age      int
+		gender   bool
+		score    float64
+		skills   []string
+		scoreMap map[string]int
+	)
+	fmt.Printf("name =  %s, age = %d, gender = %t, score = %f \n", name, age, gender, score)
+	// name = "", age = 0, gender = false, score = 0.000000
+	fmt.Printf("%T, %T, %T, %T \n", name, age, gender, score)
+	// string, int, bool, float64
+	fmt.Printf("%v %T \n", skills, skills)
+	// [] []string
+	fmt.Printf("%v, %T \n", scoreMap, scoreMap)
+	// map[], map[string]int
 }

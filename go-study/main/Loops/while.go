@@ -1,6 +1,3 @@
-//go:build ignore
-// +build ignore
-
 package main
 
 import "fmt"
@@ -13,5 +10,5 @@ func main() {
 		res += sum
 		sum++
 	}
-	fmt.Println(res) //500500
+	fmt.Println(res) // 500500
 }

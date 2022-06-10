@@ -1,0 +1,100 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	slice := []int{1, 3, 5, 7}
+	fmt.Println(slice)
+}
+
+func toString(slice []int) {
+	// fmt.Printf("len: %d, cap: %d\n", len(slice), cap(slice))
+	fmt.Printf("len: %d, cap: %d, slice: %v \n", len(slice), cap(slice), slice)
+}
+
+func sliceUpdate() {
+	slice := []int{1, 2, 3, 4, 5, 6}
+	slice2 := []int{7, 8, 9}
+	copy(slice2, slice2)
+	fmt.Printf("slice: %v, len: %d, cap: %d \n", slice, len(slice), cap(slice))
+	fmt.Printf("slice2: %v, len: %d, cap: %d \n", slice2, len(slice2), cap(slice2))
+}
+
+func sliceCap() {
+	slice := []int{1, 2, 3}
+	fmt.Printf("slice: %v, len: %d, cap: %d \n", slice, len(slice), cap(slice))
+
+	// 主动扩容
+	newSlice := make([]int, len(slice), 10)
+	copy(newSlice, slice)
+	fmt.Printf("newSlice: %v, len: %d, cap: %d \n", newSlice, len(newSlice), cap(newSlice))
+	// newSlice: [1 2 3], len: 3, cap: 10
+
+	// 自动扩容
+	// slice = append(slice, 4, 5)
+	fmt.Printf("slice: %v, len: %d, cap: %d \n", slice, len(slice), cap(slice))
+}
+
+func sliceCopy() {
+	nums := []int{1, 3, 5}
+	nums2 := []int{}
+
+	fmt.Printf("len=%d cap=%d slice=%v\n", len(nums2), cap(nums2), nums2)
+	nums2 = nums[:]
+	fmt.Printf("len=%d cap=%d slice=%v\n", len(nums2), cap(nums2), nums2)
+}
+
+func sliceAppend() {
+	slice := []int{1, 2, 3, 4, 5, 6}
+	slice2 := []int{7, 8, 9}
+	res := append(slice, slice2...)
+	fmt.Println(res)
+}
+
+func sliceRemoveElement() {
+	slice := []int{1, 2, 3, 4, 5, 6}
+	index := 3
+	fmt.Println(append(slice[:index], slice[index+1:]...))
+}
+
+func sliceReverse(s []int) []int {
+	j := len(s) - 1
+	for i := 0; i < j; i++ {
+		s[i], s[j] = s[j], s[i]
+		j--
+	}
+	return s
+}
+
+func equal(s1 []int, s2 []int) bool {
+	if len(s1) != len(s2) {
+		return false
+	}
+
+	for i, _ := range s1 {
+		if s1[i] != s2[i] {
+			return false
+		}
+	}
+	return true
+}
+
+func sliceMerge(nums1, nums2 []int, startIndex int) []int {
+	// nums1 := []int{1, 2, 3, 0, 0, 0}
+	// nums2 := []int{2, 5, 6}
+	// startIndex := 3
+	// fmt.Println(startIndex, len(nums1)-len(nums2))
+	// if startIndex > len(nums1)-len(nums2) {
+	// 	// s := errors.New("将会超出原切片长度！").Error()
+	// 	return nil
+	// }
+	for i, _ := range nums2 {
+		if startIndex+i > len(nums1)-1 {
+			break
+		}
+		nums1[startIndex+i] = nums2[i]
+	}
+	return nums1
+}
