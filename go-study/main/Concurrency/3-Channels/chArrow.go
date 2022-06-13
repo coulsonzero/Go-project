@@ -21,6 +21,7 @@ func main() {
 	go out(6, 10, ch)
 
 	<-ch
+	// fmt.Println(<-ch)
 }
 
 /*

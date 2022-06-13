@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
+	"github.com/wxnacy/wgo/arrays"
 )
 
 func main() {
-	slice := []int{1, 3, 5, 7}
-	fmt.Println(slice)
+	slice := []int{1, 2, 3, 0, 0}
+	slice1 := sliceInsert(slice, 3, 4)  // len: 6, cap: 10, slice: [1 2 3 4 0 0]
+	slice2 := sliceInsert2(slice, 3, 4) // len: 6, cap: 10, slice: [1 2 3 4 0 0]
+	toString(slice1)
+	toString(slice2)
 }
 
 func toString(slice []int) {
@@ -53,6 +57,18 @@ func sliceAppend() {
 	fmt.Println(res)
 }
 
+func sliceInsert(slice []int, index int, value int) []int {
+	slice = append(slice[:index], append([]int{value}, slice[index:]...)...)
+	return slice
+}
+
+func sliceInsert2(slice []int, index int, value int) []int {
+	slice = append(slice, 0)
+	copy(slice[index+1:], slice[index:])
+	slice[index] = value
+	return slice
+}
+
 func sliceRemoveElement() {
 	slice := []int{1, 2, 3, 4, 5, 6}
 	index := 3
@@ -97,4 +113,10 @@ func sliceMerge(nums1, nums2 []int, startIndex int) []int {
 		nums1[startIndex+i] = nums2[i]
 	}
 	return nums1
+}
+
+func contains() {
+	slice := []int64{1, 3, 5, 7}
+	res := arrays.ContainsInt(slice, 8)
+	fmt.Println(res) // -1
 }

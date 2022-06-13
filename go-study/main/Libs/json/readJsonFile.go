@@ -8,6 +8,6 @@ import (
 
 func main() {
 	f, _ := os.ReadFile("bar.json")
-	res := gjson.Get(string(f), "xAxis")
+	res := gjson.Get(string(f), "data")
 	fmt.Println(res)
 }

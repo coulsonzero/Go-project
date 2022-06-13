@@ -12,7 +12,16 @@ type Student struct {
 }
 
 func main() {
-	SetJson2()
+	s := Student{
+		Name:  "John",
+		Email: "john@gmail.com",
+		Age:   20,
+	}
+	fmt.Println(s)
+	data := `{"Name":"John","Email":"john@gmail.com","Age":20}`
+	ptr := &Student{}
+	fmt.Println(jsonToStruct(data, *ptr))
+	SetJson()
 }
 
 func GetJson() {
@@ -47,4 +56,16 @@ func SetJson2() {
 	json.Unmarshal(obj, &s)
 	fmt.Println(s)
 
+}
+
+// struct -> json
+func structToJson(obj interface{}) string {
+	res, _ := json.Marshal(obj)
+	return string(res)
+}
+
+// json -> struct
+func jsonToStruct(data string, ptr interface{}) interface{} {
+	json.Unmarshal([]byte(data), &ptr)
+	return ptr
 }

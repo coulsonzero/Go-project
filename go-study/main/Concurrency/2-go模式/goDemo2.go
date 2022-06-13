@@ -7,7 +7,7 @@ import (
 
 func out2(start, end int) {
 	for i := start; i <= end; i++ {
-		time.Sleep(50 * time.Millisecond)
+		// time.Sleep(50 * time.Millisecond)
 		fmt.Println(i)
 	}
 }

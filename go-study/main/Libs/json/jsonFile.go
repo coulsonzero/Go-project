@@ -22,5 +22,9 @@ func ReadJsonFile() {
 	var bar map[string]interface{}
 	decoder := json.NewDecoder(f)
 	decoder.Decode(&bar)
-	fmt.Println(bar)
+	// fmt.Println(bar)
+
+	data, _ := json.Marshal(bar)
+	fmt.Printf("%T\n", bar)
+	fmt.Println(string(data))
 }

@@ -38,8 +38,7 @@ func main() {
 func query() {
 	sqlStr := "select id, name, email from users where id = ?"
 	var u User
-	err := db.QueryRow(sqlStr, 2).Scan(&u.id, &u.name, &u.email)
-	if err != nil {
+	if err := db.QueryRow(sqlStr, 2).Scan(&u.id, &u.name, &u.email); err != nil {
 		fmt.Println("scan fail: ", err)
 		return
 	}
@@ -53,8 +52,7 @@ func queryAll() {
 	defer rows.Close()
 	for rows.Next() {
 		var u User
-		err := rows.Scan(&u.id, &u.name, &u.email)
-		if err != nil {
+		if err := rows.Scan(&u.id, &u.name, &u.email); err != nil {
 			fmt.Println("scan fail: ", err)
 			return
 		}
