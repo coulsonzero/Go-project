@@ -1,4 +1,4 @@
-package main
+package test
 
 import (
 	"database/sql"
@@ -16,7 +16,7 @@ type User struct {
 	email string
 }
 
-func main() {
+func demo() {
 	db := ConnectDB()
 	defer db.Close()
 	// Query(2)

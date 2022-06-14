@@ -4,11 +4,14 @@ go 1.17
 
 require (
 	github.com/c-bata/go-prompt v0.2.6 // indirect
+	github.com/djimenez/iconv-go v0.0.0-20160305225143-8960e66bd3da // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/gorilla/securecookie v1.1.1 // indirect
 	github.com/gorilla/sessions v1.2.1 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/joho/godotenv v1.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
@@ -26,4 +29,6 @@ require (
 	golang.org/x/sys v0.0.0-20220610221304-9f5ed59c137d // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
+	gorm.io/driver/mysql v1.3.4 // indirect
+	gorm.io/gorm v1.23.6 // indirect
 )
