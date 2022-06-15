@@ -8,7 +8,7 @@ package main
  */
 func check(material []int, standard int) []int {
 	// write code here
-	res := []int{}
+	var res []int
 	for _, v := range material {
 		if v >= standard {
 			res = append(res, v)

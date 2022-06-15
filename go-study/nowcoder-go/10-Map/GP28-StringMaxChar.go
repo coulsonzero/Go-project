@@ -8,11 +8,10 @@ package main
  */
 func character(s string) byte {
 	// write code here
-	charArr := ([]byte)(s)
 	charMap := make(map[byte]int)
-	count := 0
+	var count int
 	var ans byte
-	for _, v := range charArr {
+	for _, v := range []byte(s) {
 		charMap[v]++
 		if charMap[v] > count {
 			count = charMap[v]

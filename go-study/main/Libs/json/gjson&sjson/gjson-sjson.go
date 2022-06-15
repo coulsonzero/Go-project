@@ -14,8 +14,9 @@ func main() {
 }`
 	value, _ := sjson.Set(obj, "axisLine.lineStyle.color", "skyblue")
 	fmt.Println(value)
-	// res := gjson.Get(obj, "axisLine.lineStyle")
-	// fmt.Println(res)
+
+	res := gjson.Get(obj, "axisLine.lineStyle")
+	fmt.Println(res)
 }
 
 func getJson() {

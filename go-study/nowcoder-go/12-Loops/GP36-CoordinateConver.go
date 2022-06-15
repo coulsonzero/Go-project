@@ -8,7 +8,7 @@ package main
  */
 func transform(array [][]int) []int {
 	// write code here
-	res := []int{}
+	var res []int
 	for _, v := range array {
 		res = append(res, v...)
 	}
