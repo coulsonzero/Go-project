@@ -11,7 +11,6 @@ import (
 
 func main() {
 	var mu sync.Mutex
-
 	mu.Lock()
 	go hi(&mu)
 	mu.Lock()

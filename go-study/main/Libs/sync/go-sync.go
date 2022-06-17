@@ -5,22 +5,36 @@ import (
 	"sync"
 )
 
+/**
+ * 互斥量实现并发
+ */
+
 func main() {
+	syncWait()
+}
+
+func syncWait() {
 	var wg sync.WaitGroup
-	var mu sync.Mutex
-	var count int
 
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
-		go func() {
+		go func(i int) {
 			defer wg.Done()
-			mu.Lock()
-			count++
-			fmt.Println(count)
-			mu.Unlock()
-		}()
+			fmt.Println(i)
+		}(i)
 	}
 	wg.Wait()
-
-	// fmt.Println(count)
 }
+
+/*
+1
+8
+3
+4
+6
+5
+2
+7
+9
+10
+*/

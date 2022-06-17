@@ -24,7 +24,8 @@ func main() {
 	// channelCacheConcurrent()
 	// syncWait()
 	// syncWait2()
-	maxConcurrency()
+	// maxConcurrency()
+	syncWaitLock()
 }
 
 func syncWaitLock() {
@@ -38,12 +39,13 @@ func syncWaitLock() {
 			defer wg.Done()
 			mu.Lock()
 			count++
+			fmt.Println(count)
 			mu.Unlock()
 		}()
 	}
 	wg.Wait()
 
-	fmt.Println(count)
+	// fmt.Println(count)
 }
 
 func maxConcurrency() {

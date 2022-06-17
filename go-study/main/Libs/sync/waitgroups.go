@@ -24,6 +24,7 @@ func main() {
 
 		go func() {
 			defer wg.Done()
+			fmt.Println()
 			worker(i)
 		}()
 	}
