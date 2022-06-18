@@ -17,4 +17,5 @@ func hello(name string, ch chan string) {
 	fmt.Printf("hello, %s \n", name)
 	// 从通道接受数据
 	<-ch
+
 }

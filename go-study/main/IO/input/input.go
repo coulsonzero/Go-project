@@ -2,14 +2,16 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"time"
 )
 
 func main() {
 	start := time.Now()
-	for i := 0; i < 2000000000; i++ {
-
-	}
+	// for i := 0; i < 2000000000; i++ {
+	//
+	// }
+	fmt.Println(strings.Title("her royal highness"))
 	// end := time.Now()
 	// secs := end.Sub(start)
 	secs := time.Since(start).Seconds()

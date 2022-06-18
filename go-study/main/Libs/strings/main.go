@@ -2,14 +2,18 @@ package main
 
 import (
 	"fmt"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"strings"
 	"time"
 	"unicode"
 )
 
 func main() {
-	fmt.Println(strings.HasSuffix("main.py", "py"))
-	fmt.Println(strings.HasPrefix("main.py", "py"))
+	if ok := strings.Contains("test-v1", "v1"); ok {
+		fmt.Println("find the character.")
+		fmt.Println(ok)
+	}
 }
 
 func join() {
@@ -43,6 +47,9 @@ func demo() {
 	fmt.Println(strings.TrimFunc("¡¡¡$6521.123Hello, Gophers!!!", func(r rune) bool {
 		return !unicode.IsLetter(r) && !unicode.IsNumber(r)
 	})) // 6521.123Hello, Gophers
+
+	fmt.Println(strings.HasSuffix("main.py", "py"))
+	fmt.Println(strings.HasPrefix("main.py", "py"))
 }
 
 func progressBar() {
@@ -54,4 +61,9 @@ func progressBar() {
 		time.Sleep(100 * time.Millisecond)
 	}
 	fmt.Printf(bar+" Done!", strings.Repeat("=", col))
+}
+
+func title() {
+	res := cases.Title(language.Und).String("hello, world!") // Hello, World!
+	fmt.Println(res)
 }

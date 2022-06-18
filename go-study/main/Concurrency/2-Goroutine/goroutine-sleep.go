@@ -7,13 +7,12 @@ import (
 
 func out2(start, end int) {
 	for i := start; i <= end; i++ {
-		// time.Sleep(50 * time.Millisecond)
 		fmt.Println(i)
 	}
 }
 
 func main() {
-	// go实现并发,
+	// go实现并发
 	go out2(0, 5)
 	go out2(6, 10)
 
