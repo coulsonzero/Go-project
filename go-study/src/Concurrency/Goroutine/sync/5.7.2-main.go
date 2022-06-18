@@ -1,6 +1,6 @@
 package main
 
-import "go-study/main/Concurrency/Goroutine/sync/pkg"
+import "go-study/src/Concurrency/Goroutine/sync/pkg"
 
 func main() {
 	var ch = make(chan string, 2)
