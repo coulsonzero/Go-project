@@ -2,14 +2,13 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func out(start, end int, ch chan bool) {
 	for i := start; i <= end; i++ {
-		time.Sleep(50 * time.Millisecond) // 必须, 没有停顿会导致主线程结束后子线程也全部停止
 		fmt.Println(i)
 	}
+	// 发送信息
 	ch <- true
 }
 
@@ -18,10 +17,11 @@ func main() {
 	ch := make(chan bool)
 	// 多线程异步方法，同时执行多个任务
 	go out(0, 5, ch)
-	go out(6, 10, ch)
+	go out(6, 100, ch)
 
+	// 接受信息
 	<-ch
-	// fmt.Println(<-ch)
+	fmt.Println(<-ch)
 }
 
 /*
