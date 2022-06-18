@@ -14,7 +14,7 @@ package main
 
 import (
 	"fmt"
-	cachePkg "gitee.com/shirdonl/goAdvanced/chapter6/secondKill/cache"
+	"gitee.com/shirdonl/goAdvanced/chapter6/secondKill/cache"
 	"gitee.com/shirdonl/goAdvanced/chapter6/secondKill/util"
 	"github.com/garyburd/redigo/redis"
 	"html/template"
