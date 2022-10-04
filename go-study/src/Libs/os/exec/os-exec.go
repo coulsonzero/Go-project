@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	goCmd3()
+	cmdTail()
 }
 
 /**
@@ -29,4 +29,20 @@ func goCmd2() {
 func goCmd3() {
 	lsOut, _ := exec.Command("bash", "-c", "ls -a -l -h").Output()
 	fmt.Printf("> ls -a -l -h: %s", string(lsOut))
+}
+
+func goCmd4() {
+	res, _ := exec.Command("git", "status").Output()
+	fmt.Println(string(res))
+}
+
+func cmdTail() {
+	res, _ := exec.Command("tail", "-n", "+18", "bill.csv").Output()
+	fmt.Println(string(res))
+}
+
+func Exec() {
+	out := exec.Command("bash", "-c", "tail -n +18 bill.csv >> res.csv")
+	_ = out.Start()
+	_ = out.Wait()
 }

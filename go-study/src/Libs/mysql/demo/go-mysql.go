@@ -11,7 +11,7 @@ import (
 func main() {
 	db := ConnectDB()
 	ConnectTest(db)
-	CreateTable(db)
+	// CreateTable(db)
 	// InsertData(db)
 	// QueryData(db)
 	QueryAllData(db)

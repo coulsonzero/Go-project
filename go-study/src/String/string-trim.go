@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	res := strings.Trim("   hello world !   ", " ")
 	fmt.Println(res)
 
@@ -16,5 +15,5 @@ func main() {
 
 /*
    hello world !
-hello world !
+   hello world !
 */

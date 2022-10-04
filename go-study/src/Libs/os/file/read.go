@@ -13,7 +13,7 @@ var specifiedType []string = []string{"txt", "py", "js"}
 var retainType []string = []string{"go"}
 
 func main() {
-	WriteFile()
+
 }
 
 // 创建文件
@@ -130,6 +130,12 @@ func Exists(path string) bool {
 		return false
 	}
 	return true
+}
+
+// IsExists 文件是否存在
+func IsExists(path string) bool {
+	_, err := os.Stat(path)
+	return err == nil || os.IsExist(err)
 }
 
 // 判断所给路径是否为文件夹

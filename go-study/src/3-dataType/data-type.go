@@ -2,12 +2,33 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"reflect"
+	"unsafe"
 )
 
 func main() {
-	dataType()
-	nums := []int{1, 2, 3, 4, 5}
-	fmt.Println(Leng(nums))
+	// dataType()
+	// nums := []int{1, 2, 3, 4, 5}
+	// fmt.Println(Leng(nums))
+
+	var num int = 7
+	var pi float32 = 3.141
+	var c complex64 = 1.10 + 10i
+	fmt.Println(num, pi, c)
+	fmt.Println(unsafe.Sizeof(num))  // 8
+	fmt.Println(unsafe.Sizeof(pi))   // 4
+	fmt.Println(unsafe.Sizeof(c))    // 8
+	fmt.Println(reflect.TypeOf(num)) // int
+	fmt.Println(reflect.TypeOf(pi))  // float32
+	fmt.Println(reflect.TypeOf(c))   // complex64
+	fmt.Printf("int: -%d ~ %d\n", math.MaxInt, math.MaxInt)
+
+	var r rune = '你'
+	fmt.Println(string(r))
+	var b byte = 'v'
+	fmt.Println(string(b))
+
 }
 
 func dataType() {

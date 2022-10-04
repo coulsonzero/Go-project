@@ -6,7 +6,7 @@ import (
 )
 
 /**
- * Q: JZ5-空包字符替换
+ * Q: JZ5-空字符替换
  * input : "We Are Happy"
  * output: "We%20Are%20Happy"
  */

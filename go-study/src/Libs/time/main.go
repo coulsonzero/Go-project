@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"time"
 )
 
@@ -66,6 +67,13 @@ func timer() {
 	Sum()
 	end := time.Now()
 	fmt.Println(end.Sub(start))
+}
+
+func timer2() {
+	timeStart := time.Now()
+	Sum()
+	timeElapsed := time.Since(timeStart)
+	log.Printf("%v\n", timeElapsed)
 }
 
 func Sum() int {

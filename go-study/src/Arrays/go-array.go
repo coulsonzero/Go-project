@@ -23,6 +23,8 @@ func ArrayInit() {
 	fmt.Printf("len: %d, cap: %d, array: %v \n", len(f), cap(f), f)
 
 	fmt.Printf("%v, %c, %T", 'a', 'a', 'a') // 97, a, int32
+
+	demo()
 }
 
 func ArrayIter() {
@@ -31,4 +33,12 @@ func ArrayIter() {
 	for _, v := range ptr {
 		fmt.Println(v)
 	}
+}
+
+func demo() {
+	var p [100]int
+	var m interface{} = [...]int{99: 0}
+	// fmt.Println(p)
+	// fmt.Println(m)
+	fmt.Println(p == m) // true
 }

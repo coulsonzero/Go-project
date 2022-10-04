@@ -10,6 +10,17 @@ import (
 
 type Middleware func(http.HandlerFunc) http.HandlerFunc
 
+func main() {
+	http.HandleFunc("/", Chain(Hello, Method("GET"), Logging()))
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Fatal(err)
+	}
+}
+
+func Hello(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "hello world")
+}
+
 // Logging logs all requests with its path and the time it took to process
 func Logging() Middleware {
 
@@ -21,10 +32,15 @@ func Logging() Middleware {
 
 			// Do middleware things
 			start := time.Now()
-			defer func() { log.Println(r.URL.Path, time.Since(start)) }()
+			defer func() {
+				log.Println(r.URL.Path, time.Since(start))
+				sub := time.Now().Sub(start)
+				fmt.Fprint(w, sub)
+			}()
 
 			// Call the next middleware/handler in chain
 			f(w, r)
+
 		}
 	}
 }
@@ -56,15 +72,6 @@ func Chain(f http.HandlerFunc, middlewares ...Middleware) http.HandlerFunc {
 		f = m(f)
 	}
 	return f
-}
-
-func Hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "hello world")
-}
-
-func main() {
-	http.HandleFunc("/", Chain(Hello, Method("GET"), Logging()))
-	http.ListenAndServe(":8080", nil)
 }
 
 /*

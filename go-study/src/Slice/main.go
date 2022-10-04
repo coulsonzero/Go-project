@@ -11,6 +11,7 @@ func main() {
 	slice2 := sliceInsert2(slice, 3, 4) // len: 6, cap: 10, slice: [1 2 3 4 0 0]
 	toString(slice1)
 	toString(slice2)
+
 }
 
 func toString(slice []int) {

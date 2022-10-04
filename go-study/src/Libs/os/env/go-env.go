@@ -7,15 +7,11 @@ import (
 )
 
 func main() {
-	godotenv.Load()
-	fmt.Println(os.Getenv("HOST"), os.Getenv("PORT"))
-	os.Setenv("PORT", "8070")
-	fmt.Println(os.Getenv("PORT"))
-}
+	if err := godotenv.Load(); err != nil {
+		panic("Failed to load env file")
+	}
+	host := os.Getenv("HOST")
+	port := os.Getenv("PORT")
 
-func demo() {
-	os.Setenv("NAME", "gopher")
-	os.Setenv("BURROW", "/usr/gopher")
-
-	fmt.Printf("%s lives in %s.\n", os.Getenv("NAME"), os.Getenv("BURROW"))
+	fmt.Printf("host: %s, post: %s \n", host, port)
 }

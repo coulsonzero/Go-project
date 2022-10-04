@@ -12,6 +12,7 @@ func main() {
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
+	// log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
 
 func hello(w http.ResponseWriter, r *http.Request) {
