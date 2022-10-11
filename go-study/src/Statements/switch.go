@@ -8,6 +8,7 @@ func main() {
 	case 1:
 		fmt.Println("1")
 		// statement(s)        //不需要break
+		fallthrough
 	default:
 		fmt.Println("0")
 		// statement(s)

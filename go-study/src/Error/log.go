@@ -6,6 +6,9 @@ import (
 	"log"
 )
 
+// log.Fatal()
+// log.Fatalf()
+
 func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
