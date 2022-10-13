@@ -22,6 +22,7 @@ func ConnectDB() *sql.DB {
 	if err != nil {
 		panic("连接数据库失败")
 	}
+	fmt.Println("mysql连接成功")
 	db.SetConnMaxLifetime(time.Minute * 3)
 	db.SetMaxOpenConns(10)
 	db.SetMaxIdleConns(10)
