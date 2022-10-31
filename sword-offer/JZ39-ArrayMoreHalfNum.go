@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-func main() {
-	nums := []int{1, 2, 3, 2, 2, 2, 5, 4, 2}
-	fmt.Println(MoreThanHalfNum_Solution2(nums))
-}
-
 func MoreThanHalfNum_Solution2(numbers []int) int {
 	cntMap := make(map[int]int, len(numbers))
 	for _, v := range numbers {
@@ -31,4 +26,9 @@ func MoreThanHalfNum_Solution(numbers []int) int {
 		}
 	}
 	return -1
+}
+
+func main() {
+	nums := []int{1, 2, 3, 2, 2, 2, 5, 4, 2}
+	fmt.Println(MoreThanHalfNum_Solution2(nums))
 }

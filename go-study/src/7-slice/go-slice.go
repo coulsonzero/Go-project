@@ -10,15 +10,18 @@ import (
 // append: 自动扩容
 
 func main() {
-	// slice := []int{1, 2, 3, 0, 0}
-	// slice1 := sliceInsert(slice, 3, 4)  // len: 6, cap: 10, slice: [1 2 3 4 0 0]
-	// slice2 := sliceInsert2(slice, 3, 4) // len: 6, cap: 10, slice: [1 2 3 4 0 0]
+	slice := make([]int, 1000, 1024)
+	slice = append(slice, []int{471: 2}...)
+	fmt.Println(cap(slice))
 	// toString(slice)
-	sliceCopy()
+
 }
 
-func toString(slice []int) {
-	fmt.Printf("len: %d, cap: %d, slice: %v \n", len(slice), cap(slice), slice)
+func toString(slice ...[]int) {
+	// fmt.Printf("len: %d, cap: %d, slice: %v \n", len(slice), cap(slice), slice)
+	for _, v := range slice {
+		fmt.Printf("len: %d, cap: %d, slice: %v \n", len(v), cap(v), v)
+	}
 }
 
 func sliceUpdate() {
@@ -100,14 +103,6 @@ func equal(s1 []int, s2 []int) bool {
 }
 
 func sliceMerge(nums1, nums2 []int, startIndex int) []int {
-	// nums1 := []int{1, 2, 3, 0, 0, 0}
-	// nums2 := []int{2, 5, 6}
-	// startIndex := 3
-	// fmt.Println(startIndex, len(nums1)-len(nums2))
-	// if startIndex > len(nums1)-len(nums2) {
-	// 	// s := errors.New("将会超出原切片长度！").Error()
-	// 	return nil
-	// }
 	for i, _ := range nums2 {
 		if startIndex+i > len(nums1)-1 {
 			break

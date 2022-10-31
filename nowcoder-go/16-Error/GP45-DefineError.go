@@ -26,3 +26,7 @@ func defineerr(ping int) string {
 	}
 	return ""
 }
+
+func main() {
+	println(defineerr(200))
+}

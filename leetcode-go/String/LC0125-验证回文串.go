@@ -33,11 +33,11 @@ func isReverseString(s string) bool {
 	return true
 }
 
-/*
-// Python3
-class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        res = str.lower(re.sub('[\W_+]','',s))
-        return res == res[::-1]
-
-*/
+func isReverseString2(s string) bool {
+	for i := 0; i < len(s)/2; i++ {
+		if s[i] != s[len(s)-1-i] {
+			return false
+		}
+	}
+	return true
+}

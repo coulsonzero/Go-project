@@ -12,8 +12,36 @@ import "fmt"
  * Output: [3,99,-1,-100]
  */
 
-// 空间复杂度O(n)
+// 空间复杂度O(1)
 func rotate(nums []int, k int) {
+	k = k % len(nums)
+	var temp []int
+	temp = append(temp, nums[:len(nums)-k]...)
+	copy(nums, nums[len(nums)-k:])
+	copy(nums[k:], temp)
+}
+
+/**
+ * 执行用时： 16 ms , 在所有 Go 提交中击败了99.78%的用户
+ * 内存消耗：7.9 MB, 在所有 Go 提交中击败了52.87% 的用户
+ */
+
+// 空间复杂度O(1): 推荐
+func rotate3(nums []int, k int) {
+	reverse := func(a []int) {
+		for i, n := 0, len(a); i < n/2; i++ {
+			a[i], a[n-1-i] = a[n-1-i], a[i]
+		}
+	}
+
+	k %= len(nums)
+	reverse(nums)
+	reverse(nums[:k])
+	reverse(nums[k:])
+}
+
+// 空间复杂度O(n)
+func rotate1(nums []int, k int) {
 	k = k % len(nums)
 	m := len(nums) - k
 	ret := make([]int, len(nums[:m]))
@@ -29,20 +57,6 @@ func rotate2(nums []int, k int) {
 		res[(i+k)%len(nums)] = v
 	}
 	copy(nums, res)
-}
-
-// 空间复杂度O(1): 推荐
-func rotate3(nums []int, k int) {
-	reverse := func(a []int) {
-		for i, n := 0, len(a); i < n/2; i++ {
-			a[i], a[n-1-i] = a[n-1-i], a[i]
-		}
-	}
-
-	k %= len(nums)
-	reverse(nums)
-	reverse(nums[:k])
-	reverse(nums[k:])
 }
 
 func main() {

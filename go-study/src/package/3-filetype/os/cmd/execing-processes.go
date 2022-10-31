@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 	"os/exec"
 	"syscall"
@@ -11,7 +12,7 @@ func main() {
 
 	binary, lookErr := exec.LookPath("ls")
 	if lookErr != nil {
-		panic(lookErr)
+		log.Fatal(lookErr)
 	}
 
 	args := []string{"ls", "-a", "-l", "-h"}
@@ -20,6 +21,6 @@ func main() {
 
 	execErr := syscall.Exec(binary, args, env)
 	if execErr != nil {
-		panic(execErr)
+		log.Fatal(execErr)
 	}
 }

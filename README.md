@@ -1,5 +1,17 @@
 # Go-project
 
+
+<p align='center'>
+<a href="https://go.dev"><img alt="Support Go version" src="https://img.shields.io/badge/Go-v1.18-26C2F0"></a>
+<a href="https://github.com/coulsonzero/gopkg/blob/master/LICENSE" ><img src="https://img.shields.io/github/license/coulsonzero/gopkg?label=License"></a>
+<a href="https://github.com/coulsonzero/gopkg"><img alt="visitor" src="https://visitor-badge.laobi.icu/badge?page_id=coulsonzero.go-project"></a>
+<img src="https://img.shields.io/badge/Code%20rows-9416-success">
+
+</p>
+
+
+
+
 ## 开发环境搭建
 
 ### 安装

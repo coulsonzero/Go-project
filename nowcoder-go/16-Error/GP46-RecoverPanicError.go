@@ -20,3 +20,7 @@ func temperature(t float64) (res string) {
 	}
 	return res
 }
+
+func main() {
+	println(temperature(37.4))
+}

@@ -2,31 +2,65 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 	"time"
 	"unicode"
 )
 
 func main() {
-	fmt.Println(strings.HasSuffix("main.py", "py"))
-	fmt.Println(strings.HasPrefix("main.py", "py"))
+	// byteApi()
+	// typeConvert()
+	judgeApi()
 }
 
-func join() {
-	s := []string{"foo", "bar", "baz"}
-	fmt.Println(strings.Join(s, ", "))
+func byteApi() {
+	// 字母
+	println(unicode.IsLetter('a')) // true
+	println(unicode.IsUpper('A'))  // true
+	println(unicode.IsLower('a'))  // true
+	// 数字, 判断的严格性：c >= '0' && c <= '9' ⇒ IsDigit ⇒ IsNumber
+	c := byte('7')
+	println(c >= '0' && c <= '9')  // true,	['1-9']
+	println(unicode.IsDigit('7'))  // true, ['1-9']
+	println(unicode.IsNumber('½')) // true, ['1-9', 'Ⅷ', '½']
+	// 空白字符
+	println(unicode.IsSpace('\n')) // true, [' ', '\n', '\t']
+	// 标点字符
+	println(unicode.IsPunct(',')) // true
 }
 
-func split() {
-	fmt.Printf("%q\n", strings.Split("a,b,c", ",")) // ["a" "b" "c"]
+func typeConvert() {
+	println(strconv.Atoi("12"))             // string -> number(int)
+	println(strconv.ParseInt("12", 10, 64)) // string -> number(int64)
+	println(strconv.Itoa(12))               // number -> string
+	println(fmt.Sprintf("%d", 12))          // number -> string
+
+	// string <-> array
+	println(strings.Join([]string{"127", "0", "0", "1"}, "."))
+	fmt.Printf("%v \n", strings.Split("127.0.0.1", "."))
 }
 
-// 包含
-func contains() {
-	if ok := strings.Contains("test-v1", "v1"); ok {
-		fmt.Println("find the character.")
-		fmt.Println(ok)
-	}
+func stringApi() {
+	// +
+	println("hello" + ", " + "world")
+
+	// build | buffer
+	var buf strings.Builder
+	// var buf bytes.Buffer
+	buf.WriteString("hello")
+	buf.WriteByte(',')
+	buf.Write([]byte("world"))
+	println(buf.String())
+}
+
+func judgeApi() {
+
+	println(strings.Contains("test-v1", "v1"))
+	// startsWith, endsWith
+	println(strings.HasPrefix("main.go", "main"))
+	println(strings.HasSuffix("main.go", "go"))
+
 }
 
 func replace() {
@@ -38,7 +72,6 @@ func replace() {
 func demo() {
 	fmt.Println(strings.ToLower("Gopher"))
 	fmt.Println(strings.ToUpper("Gopher"))
-
 	fmt.Println(strings.TrimSpace(" \t\n Hello, Gophers \n\t\r\n")) // Hello, Gophers
 	fmt.Println(strings.TrimFunc("¡¡¡$6521.123Hello, Gophers!!!", func(r rune) bool {
 		return !unicode.IsLetter(r) && !unicode.IsNumber(r)

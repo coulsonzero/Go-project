@@ -19,7 +19,7 @@ func singleNumber(nums []int) int {
 	return single
 }
 
-func SingleNumber2(nums []int) int {
+func singleNumber2(nums []int) int {
 	sort.Ints(nums)
 	for i := 1; i < len(nums)-1; i += 2 {
 		if nums[i] == nums[i+1] {
@@ -27,4 +27,9 @@ func SingleNumber2(nums []int) int {
 		}
 	}
 	return nums[len(nums)-1]
+}
+
+func main() {
+	arr := []int{4, 1, 2, 1, 2, 3, 4}
+	println(singleNumber(arr))
 }

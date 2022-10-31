@@ -1,6 +1,3 @@
-//go:build ignore
-// +build ignore
-
 package main
 
 import "fmt"
@@ -11,7 +8,7 @@ import "fmt"
  */
 
 func main() {
-	arr := []int{1, 3, 5, 4, 2}
+	arr := [5]int{1, 3, 5, 4, 2}
 
 	fmt.Println(arr)      // [1, 3, 5, 4, 2]
 	fmt.Println(len(arr)) // 5
@@ -29,7 +26,7 @@ func main() {
 		fmt.Println(v)
 	}
 
-	fmt.Println(sum(arr...)) // 15
+	// fmt.Println(sum(arr...)) // 15
 
 }
 
