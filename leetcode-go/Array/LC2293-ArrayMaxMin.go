@@ -7,22 +7,13 @@ func minMaxGame(nums []int) int {
 		return nums[0]
 	}
 	arr := make([]int, len(nums)/2)
-	for i := range arr {
+	for i := 0; i < len(nums); i += 2 {
 		if i&1 == 0 {
-			arr[i] = min(nums[i*2], nums[i*2+1])
+			arr[i] = min(nums[i], nums[i+1])
 		} else {
-			arr[i] = max(nums[i*2], nums[i*2+1])
+			arr[i] = max(nums[i], nums[i+1])
 		}
 	}
-
-	// arr := make([]int, len(nums))
-	// for i := 0; i < len(nums); i += 2 {
-	// 	if i&1 == 0 {
-	// 		arr[i] = min(nums[i], nums[i+1])
-	// 	} else {
-	// 		arr[i] = max(nums[i], nums[i+1])
-	// 	}
-	// }
 
 	nums = arr
 	return nums[0]

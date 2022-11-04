@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"regexp"
 	"strconv"
 )
@@ -24,7 +25,7 @@ func myAtoi2(s string) int {
 	res := reg.FindString(s)
 	num, err := strconv.Atoi(res)
 	if err != nil {
-		panic("error: failed to convert string to int")
+		log.Fatal("error: failed to convert string to int")
 	}
 	return num
 }
