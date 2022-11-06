@@ -13,12 +13,12 @@ package main
 
 /********************************************
  * 子数组
- * var res [][]int
- * for i := 0; i < len(arr); i++ {
- *  	for j := i; j < len(arr); j++ {
- *  		res = append(res, arr[i:j+1])
- *  	}
- * }
+var res [][]int
+for i := 0; i < len(arr); i++ {
+	for j := i; j < len(arr); j++ {
+		res = append(res, arr[i:j+1])
+	}
+}
  ********************************************/
 
 func sumSubarrayMins(arr []int) int {

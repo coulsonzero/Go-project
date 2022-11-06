@@ -7,7 +7,9 @@ package main
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	if list1 == nil {
 		return list2
-	} else if list2 == nil {
+	}
+
+	if list2 == nil {
 		return list1
 	}
 

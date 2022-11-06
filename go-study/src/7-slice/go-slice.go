@@ -10,11 +10,14 @@ import (
 // append: 自动扩容
 
 func main() {
-	slice := make([]int, 1000, 1024)
-	slice = append(slice, []int{471: 2}...)
-	fmt.Println(cap(slice))
+	// slice := make([]int, 1000, 1024)
+	// slice = append(slice, []int{471: 2}...)
+	// fmt.Println(cap(slice))
 	// toString(slice)
 
+	var num int
+	num = 12
+	fmt.Println(int64(num))
 }
 
 func toString(slice ...[]int) {

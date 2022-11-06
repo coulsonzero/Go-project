@@ -11,7 +11,9 @@ import (
 func main() {
 	// byteApi()
 	// typeConvert()
-	judgeApi()
+	// judgeApi()
+
+	// println(strings.Count("abcaabc12", "a"))
 }
 
 func byteApi() {

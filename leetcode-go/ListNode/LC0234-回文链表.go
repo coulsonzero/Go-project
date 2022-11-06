@@ -10,17 +10,12 @@ package main
 // Output: true
 
 func isPalindrome(head *ListNode) bool {
-	var array []int
-	array = append(array, head.Val)
-	for head.Next != nil {
+	array := []int{head.Val}
+
+	for ; head.Next != nil; head = head.Next {
 		array = append(array, head.Next.Val)
-		head = head.Next
 	}
-	// for i, j := 0, len(array)-1; i < j; i, j = i+1, j-1 {
-	// 	if array[i] != array[j] {
-	// 		return false
-	// 	}
-	// }
+
 	for i := 0; i < len(array)/2; i++ {
 		if array[i] != array[len(array)-1-i] {
 			return false

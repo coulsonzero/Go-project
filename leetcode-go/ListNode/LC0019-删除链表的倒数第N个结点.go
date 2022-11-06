@@ -17,12 +17,15 @@ package main
 
 // 暴力算法：先获取链表长度，然后遍历到倒数第n个节点后删除改节点
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	getLength := func(head *ListNode) (length int) {
-		for ; head != nil; head = head.Next {
+	getLength := func(head *ListNode) int {
+		var length int
+		for head != nil {
+			head = head.Next
 			length++
 		}
-		return
+		return length
 	}
+
 	length, dummy := getLength(head), &ListNode{0, head}
 	cur := dummy
 	for i := 0; i < length-n; i++ {

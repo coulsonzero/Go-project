@@ -24,10 +24,10 @@ func main() {
 	head := ListNode{1, &node2}
 
 	cur := reverseList(&head)
-	fmt.Println(toString(cur)) // 3->2->1
+	fmt.Println(ToStringList(cur)) // 3->2->1
 }
 
-func toString(cur *ListNode) (res string) {
+func ToStringList(cur *ListNode) (res string) {
 	for cur != nil {
 		if cur.Next != nil {
 			res += strconv.Itoa(cur.Val) + "->"

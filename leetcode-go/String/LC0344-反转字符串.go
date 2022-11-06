@@ -36,4 +36,10 @@ func main() {
 	s := []byte{'h', 'e', 'l', 'l', 'o'}
 	reverseString(s)
 	fmt.Println(string(s))
+
+	s2 := "leetcode"
+	t := []byte(s2)
+	reverseString(t)
+	fmt.Println(string(t))
+
 }
