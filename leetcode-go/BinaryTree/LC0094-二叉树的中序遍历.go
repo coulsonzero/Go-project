@@ -14,6 +14,9 @@ func inorderTraversal(root *TreeNode) (res []int) {
 		res = append(res, node.Val)
 		order(node.Right)
 	}
+	if root == nil {
+		return nil
+	}
 	order(root)
 	return
 }

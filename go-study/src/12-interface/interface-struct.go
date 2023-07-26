@@ -7,11 +7,9 @@ type animal interface {
 	eat()
 }
 
-type cat struct {
-}
+type cat struct{}
 
-type dog struct {
-}
+type dog struct{}
 
 func (c *cat) sleep() {
 	fmt.Println("cat is sleeping ...")

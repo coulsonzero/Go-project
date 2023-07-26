@@ -14,6 +14,9 @@ func postorderTraversal(root *TreeNode) (res []int) {
 		order(node.Right)
 		res = append(res, node.Val)
 	}
+	if root == nil {
+		return nil
+	}
 	order(root)
 	return
 }

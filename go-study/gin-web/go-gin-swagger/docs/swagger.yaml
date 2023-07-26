@@ -1,0 +1,30 @@
+info:
+  contact: {}
+paths:
+  /hello:
+    get:
+      consumes:
+      - application/json
+      description: 测试swagger-hello接口
+      parameters:
+      - description: 用户名，建议使用姓名拼音
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success":true,"data":{},"msg":"ok"}
+          schema:
+            type: json
+        "500":
+          description: status":500,"data":{},"Msg":{},"Error":"error"}
+          schema:
+            type: json
+      summary: 测试接口
+      tags:
+      - admin
+swagger: "2.0"

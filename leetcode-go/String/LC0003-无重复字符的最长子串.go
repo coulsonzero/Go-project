@@ -1,27 +1,28 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
-
 func lengthOfLongestSubstring(s string) int {
-	var res []string
-	var temp string
-	for l := 0; l < len(s); l++ {
-		for r := 0; r < len(s); r++ {
-			if !strings.Contains(temp, string(s[r])) {
-				temp += string(s[r])
-			} else {
-				fmt.Println(temp)
-				res = append(res, temp)
-				break
-			}
+	m := make(map[byte]int)
+	n := len(s)
+	rk, ans := -1, 0
+	for i := 0; i < n; i++ {
+		if i != 0 {
+			delete(m, s[i-1])
 		}
-	}
+		for rk+1 < n && m[s[rk+1]] == 0 {
+			m[s[rk+1]]++
+			rk++
+		}
 
-	fmt.Println(res)
-	return -1
+		ans = max(ans, rk-i+1)
+	}
+	return ans
+}
+
+func max(x, y int) int {
+	if x < y {
+		return y
+	}
+	return x
 }
 
 func main() {

@@ -1,40 +1,16 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+/**
+ * 206. 反转链表
+ * 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+ * 输入：head = [1,2,3,4,5]
+ * 输出：[5,4,3,2,1]
+ */
 
 func reverseList(head *ListNode) *ListNode {
 	var pre *ListNode
 	for head != nil {
-		head.Next, pre, head = pre, head, head.Next
+		pre, head, head.Next = head, head.Next, pre
 	}
 	return pre
-}
-
-func main() {
-	node3 := ListNode{3, nil}
-	node2 := ListNode{2, &node3}
-	head := ListNode{1, &node2}
-
-	cur := reverseList(&head)
-	fmt.Println(ToStringList(cur)) // 3->2->1
-}
-
-func ToStringList(cur *ListNode) (res string) {
-	for cur != nil {
-		if cur.Next != nil {
-			res += strconv.Itoa(cur.Val) + "->"
-		} else {
-			res += strconv.Itoa(cur.Val)
-		}
-		cur = cur.Next
-	}
-	return res
 }

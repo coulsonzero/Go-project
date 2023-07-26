@@ -15,9 +15,6 @@ func main() {
 	// fmt.Println(cap(slice))
 	// toString(slice)
 
-	var num int
-	num = 12
-	fmt.Println(int64(num))
 }
 
 func toString(slice ...[]int) {
@@ -77,10 +74,8 @@ func sliceInsert2(slice []int, index int, value int) []int {
 	return slice
 }
 
-func sliceRemoveElement() {
-	slice := []int{1, 2, 3, 4, 5, 6}
-	index := 3
-	fmt.Println(append(slice[:index], slice[index+1:]...))
+func sliceRemove(slice []int, i int) []int {
+	return append(slice[:i], slice[i+1:]...)
 }
 
 func sliceReverse(s []int) []int {

@@ -1,27 +1,25 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"time"
+	"os"
 )
 
 func main() {
-	start := time.Now()
-	for i := 0; i < 2000000000; i++ {
-
-	}
-	// end := time.Now()
-	// secs := end.Sub(start)
-	secs := time.Since(start).Seconds()
-	// fmt.Println(secs)
-	fmt.Printf("%.2fs", secs)
-
-}
-
-func input() {
 	var name string
-	fmt.Print("请输入名称(name): ")
+	// fmt.Print("please enter your name: ")
 	fmt.Scanln(&name)
-
-	fmt.Println("Output: " + name)
+	// fmt.Println("Output: " + name)
 }
+
+// please enter your name: John Smith
+// Output: John
+
+func bufio_example() {
+	ans, _ := bufio.NewReader(os.Stdin).ReadString('\n')
+	print(ans)
+}
+
+// John Smith
+// John Smith

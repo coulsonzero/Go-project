@@ -2,6 +2,16 @@ package main
 
 import "fmt"
 
+/*
+for i := 0; i < len(s); i++ {
+	// s[v] : byte
+}
+
+for _, v := range s {
+	// v: rune
+}
+*/
+
 func main() {
 	s1 := "hello world"
 	s2 := "Github官网"

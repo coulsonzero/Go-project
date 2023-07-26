@@ -1,7 +1,28 @@
 package main
 
+/**
+ * 141题与142题相同
+ */
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 // map 哈希表
 func hasCycle(head *ListNode) bool {
+	m := make(map[*ListNode]bool)
+	for head != nil {
+		if m[head] {
+			return true
+		}
+		m[head] = true
+		head = head.Next
+	}
+	return false
+}
+
+func hasCycle2(head *ListNode) bool {
 	m := make(map[*ListNode]struct{})
 	for head != nil {
 		if _, ok := m[head]; ok {
@@ -14,7 +35,7 @@ func hasCycle(head *ListNode) bool {
 }
 
 // 快慢指针
-func hasCycle2(head *ListNode) bool {
+func hasCycle3(head *ListNode) bool {
 	if head == nil || head.Next == nil {
 		return false
 	}
@@ -28,11 +49,6 @@ func hasCycle2(head *ListNode) bool {
 	}
 	return true
 }
-
-// type ListNode struct {
-// 	Val  int
-// 	Next *ListNode
-// }
 
 func main() {
 	var node1, node2, node3, node4 ListNode

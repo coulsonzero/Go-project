@@ -1,4 +1,4 @@
-package main
+package Summary
 
 import (
 	"strconv"
@@ -87,6 +87,28 @@ func hasCycle(head *ListNode) bool {
 		m[head] = head.Val
 	}
 	return false
+}
+
+// listNodeToArray 链表转换为数组
+func listNodeToArray(head *ListNode) []int {
+	var ans []int
+	for head != nil {
+		ans = append(ans, head.Val)
+		head = head.Next
+	}
+	return ans
+}
+
+// arrayToListNode 数组生成链表
+func arrayToListNode(ans []int) *ListNode {
+	dummy := &ListNode{Next: nil}
+	cur := dummy
+	for _, v := range ans {
+		cur.Next = &ListNode{Val: v}
+		cur = cur.Next
+	}
+
+	return dummy.Next
 }
 
 func main() {

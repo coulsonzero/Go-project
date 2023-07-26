@@ -36,5 +36,4 @@ func main() {
 	// sortInts(slice)			// [1, 3, 5]
 	sortInts(slice, true) // [5, 3, 1]
 	fmt.Println(slice)
-
 }

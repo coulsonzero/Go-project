@@ -1,8 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode"
+)
 
 func main() {
+	println(unicode.IsDigit('9'))
+
+	fmt.Printf("%T", '3'-'0')
+
+}
+
+func demo() {
 
 	c := 'a'
 	z := '美'

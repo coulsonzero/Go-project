@@ -1,0 +1,44 @@
+package main
+
+import "testing"
+
+/*
+$ go test -bench .
+goos: darwin
+goarch: arm64
+pkg: go-study/fuzzing/benchmark/struct-benchmark
+BenchmarkStructPointerReceiver1000-8            1000000000               0.3185 ns/op
+BenchmarkStructPointerReceiver10000-8           1000000000               0.3127 ns/op
+BenchmarkStructPointerReceiver100000-8          1000000000               0.3142 ns/op
+BenchmarkStructPointerReceiver1000000-8         1000000000               0.3131 ns/op
+BenchmarkStructValueReceiver1000-8              1000000000               0.3131 ns/op
+BenchmarkStructValueReceiver10000-8             1000000000               0.3144 ns/op
+BenchmarkStructValueReceiver100000-8            1000000000               0.3131 ns/op
+BenchmarkStructValueReceiver1000000-8           1000000000               0.3132 ns/op
+PASS
+ok      go-study/fuzzing/benchmark/struct-benchmark     3.260s
+*/
+
+func benchmarkStructPointerReceiver(i int, b *testing.B) {
+	c := new(Cat)
+	for n := 0; n < b.N; n++ {
+		c.setName("poul")
+	}
+}
+
+func benchmarkStructValueReceiver(i int, b *testing.B) {
+	var c Cat
+	for n := 0; n < b.N; n++ {
+		c.changeName("koya")
+	}
+}
+
+func BenchmarkStructPointerReceiver1000(b *testing.B)    { benchmarkStructPointerReceiver(1000, b) }
+func BenchmarkStructPointerReceiver10000(b *testing.B)   { benchmarkStructPointerReceiver(10000, b) }
+func BenchmarkStructPointerReceiver100000(b *testing.B)  { benchmarkStructPointerReceiver(10000, b) }
+func BenchmarkStructPointerReceiver1000000(b *testing.B) { benchmarkStructPointerReceiver(100000, b) }
+
+func BenchmarkStructValueReceiver1000(b *testing.B)    { benchmarkStructValueReceiver(1000, b) }
+func BenchmarkStructValueReceiver10000(b *testing.B)   { benchmarkStructValueReceiver(10000, b) }
+func BenchmarkStructValueReceiver100000(b *testing.B)  { benchmarkStructValueReceiver(100000, b) }
+func BenchmarkStructValueReceiver1000000(b *testing.B) { benchmarkStructValueReceiver(100000, b) }
