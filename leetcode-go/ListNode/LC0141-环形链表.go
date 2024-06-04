@@ -10,6 +10,7 @@ type ListNode struct {
 }
 
 // map 哈希表
+
 func hasCycle(head *ListNode) bool {
 	m := make(map[*ListNode]bool)
 	for head != nil {
@@ -21,6 +22,7 @@ func hasCycle(head *ListNode) bool {
 	}
 	return false
 }
+
 
 func hasCycle2(head *ListNode) bool {
 	m := make(map[*ListNode]struct{})

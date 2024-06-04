@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/wxnacy/wgo/arrays"
 )
 
@@ -14,6 +15,8 @@ func main() {
 	// slice = append(slice, []int{471: 2}...)
 	// fmt.Println(cap(slice))
 	// toString(slice)
+
+	sliceAppend()
 
 }
 

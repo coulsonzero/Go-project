@@ -10,12 +10,7 @@ import "fmt"
  * 难度: 简单
  */
 
-// 双指针
-func reverseString(s []byte) {
-	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
-		s[i], s[j] = s[j], s[i]
-	}
-}
+
 
 func reverseString(s []byte) {
 	j := len(s) - 1
@@ -24,6 +19,15 @@ func reverseString(s []byte) {
 		j--
 	}
 }
+
+// 双指针
+func reverseString(s []byte) {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+}
+
+
 
 // 前后原地反转
 func reverseString(s []byte) {

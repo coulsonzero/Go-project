@@ -27,8 +27,8 @@ func main() {
 	}
 
 	// fmt.Println(sum(arr...)) // 15
-
 }
+
 
 func sum(nums ...int) int {
 	res := 0
@@ -37,3 +37,6 @@ func sum(nums ...int) int {
 	}
 	return res
 }
+
+
+

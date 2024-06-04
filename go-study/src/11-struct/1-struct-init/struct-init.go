@@ -21,3 +21,6 @@ func main() {
 
 	p5 := &person{name: "John", age: 20} // 方式五：返回的是指针
 }
+
+
+

@@ -12,6 +12,7 @@ func main() {
 		log.Fatalf("rpc client dial: %s \n", err)
 	}
 
+
 	var reply string
 	if err = client.Call("HelloService.Hello", "world", &reply); err != nil {
 		log.Fatalf("rpc client call: %s \n", err)

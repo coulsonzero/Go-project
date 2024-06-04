@@ -1,10 +1,5 @@
 package main
 
-import (
-	"strconv"
-	"strings"
-)
-
 /**
  * 233. 数字 1 的个数
  * 给定一个整数 n，计算所有小于等于 n 的非负整数中数字 1 出现的个数。
@@ -29,20 +24,20 @@ func countDigitOne(n int) int {
 	return cnt
 }
 
-// N/s ms
-func countDigitOne2(n int) int {
-	if n == 824883294 {
-		return 767944060
-	} else if n == 999999999 {
-		return 900000000
-	} else if n == 1000000000 {
-		return 900000001
-	}
-
-	cnt := 0
-	for i := 1; i <= n; i++ {
-		cnt += strings.Count(strconv.Itoa(i), "1")
-	}
-
-	return cnt
-}
+// // N/s ms
+// func countDigitOne2(n int) int {
+// 	if n == 824883294 {
+// 		return 767944060
+// 	} else if n == 999999999 {
+// 		return 900000000
+// 	} else if n == 1000000000 {
+// 		return 900000001
+// 	}
+//
+// 	cnt := 0
+// 	for i := 1; i <= n; i++ {
+// 		cnt += strings.Count(strconv.Itoa(i), "1")
+// 	}
+//
+// 	return cnt
+// }

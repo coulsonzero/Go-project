@@ -14,3 +14,9 @@ func main() {
 	fmt.Println(s.age)  // 8
 	fmt.Println(s)      // {"Tom", 8}
 }
+
+
+
+
+
+

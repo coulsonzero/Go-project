@@ -10,6 +10,7 @@ func main() {
 	fmt.Println(Sum(1, 3))
 	fmt.Println(Sum(1.2, 3.4))
 
+
 }
 
 func sumInt(a, b int) int {
@@ -31,3 +32,5 @@ type Num interface {
 func Sum[T Num](a, b T) T {
 	return a + b
 }
+
+

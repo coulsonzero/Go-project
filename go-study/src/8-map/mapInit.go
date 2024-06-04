@@ -6,18 +6,9 @@ import (
 )
 
 func main() {
-	mapInit()
 
 }
 
-func mapShow() {
-	countries := map[string]string{
-		"us": "USA",
-		"fr": "France",
-		"cn": "China", // 末尾加逗号，或者将大括号放在此行！
-	}
-	fmt.Println(countries) // map[cn:China fr:France us:USA]
-}
 
 // 返回字符串中最多的字符
 func mapCharCount() string {
@@ -74,44 +65,4 @@ func getNoRepeat() {
 	fmt.Println(res)
 }
 
-func demo() {
-	forwards := "UD"
-	x, y := 0, 0
-	charArr := []byte(forwards)
-	for _, v := range charArr {
-		switch v {
-		case 'U':
-			y++
-		case 'D':
-			y--
-		case 'R':
-			x++
-		case 'L':
-			x--
-		default:
-			break
-		}
 
-	}
-	fmt.Println(x, y)
-}
-
-func mapIter() {
-	m := map[string]string{
-		"us": "USA",
-		"fr": "France",
-		"cn": "China", // 末尾加逗号，或者将大括号放在此行！
-	}
-
-	for k := range m {
-		fmt.Println(k)
-	}
-}
-
-func mapInit() {
-	m := make(map[string]int)
-	m["john"] = 97
-	m["tom"] = 89
-
-	fmt.Printf("m: %#v \n", m)
-}

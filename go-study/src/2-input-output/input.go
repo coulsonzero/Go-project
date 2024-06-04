@@ -8,9 +8,11 @@ import (
 
 func main() {
 	var name string
-	// fmt.Print("please enter your name: ")
+	fmt.Print("please enter your name: ")
 	fmt.Scanln(&name)
 	// fmt.Println("Output: " + name)
+
+	// bufio_example()
 }
 
 // please enter your name: John Smith
@@ -23,3 +25,6 @@ func bufio_example() {
 
 // John Smith
 // John Smith
+
+
+

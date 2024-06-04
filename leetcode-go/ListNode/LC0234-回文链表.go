@@ -1,4 +1,4 @@
-package main
+apackage main
 
 // type ListNode struct {
 // 	Val  int
@@ -9,15 +9,30 @@ package main
 // Input: head = [1,2,2,1]
 // Output: true
 
-func isPalindrome(head *ListNode) bool {
-	array := []int{head.Val}
+// func isPalindrome(head *ListNode) bool {
+// 	array := []int{head.Val}
+//
+// 	for ; head.Next != nil; head = head.Next {
+// 		array = append(array, head.Next.Val)
+// 	}
+//
+// 	for i := 0; i < len(array)/2; i++ {
+// 		if array[i] != array[len(array)-1-i] {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
 
-	for ; head.Next != nil; head = head.Next {
-		array = append(array, head.Next.Val)
+
+func isPalindrome2(head *ListNode) bool {
+	nums := []int{head.Val}
+	for head.Next != nil {
+		nums = append(nums, head.Next.Val)
+		head = head.Next
 	}
-
-	for i := 0; i < len(array)/2; i++ {
-		if array[i] != array[len(array)-1-i] {
+	for i := 0; i < len(nums)/2; i++ {
+		if nums[i] != nums[len(nums)-1-i] {
 			return false
 		}
 	}

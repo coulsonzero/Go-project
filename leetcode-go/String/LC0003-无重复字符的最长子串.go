@@ -3,17 +3,17 @@ package main
 func lengthOfLongestSubstring(s string) int {
 	m := make(map[byte]int)
 	n := len(s)
-	rk, ans := -1, 0
+	k, ans := -1, 0
 	for i := 0; i < n; i++ {
 		if i != 0 {
 			delete(m, s[i-1])
 		}
-		for rk+1 < n && m[s[rk+1]] == 0 {
-			m[s[rk+1]]++
-			rk++
+		for k+1 < n && m[s[k+1]] == 0 {
+			m[s[k+1]]++
+			k++
 		}
 
-		ans = max(ans, rk-i+1)
+		ans = max(ans, k-i+1)
 	}
 	return ans
 }

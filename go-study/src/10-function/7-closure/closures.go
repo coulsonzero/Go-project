@@ -4,6 +4,7 @@ import "fmt"
 
 func intSeq() func() int {
 	i := 0
+	// fmt.Println(i)
 	return func() int {
 		i++
 		return i
@@ -18,3 +19,5 @@ func main() {
 	newInts := intSeq()
 	fmt.Println(newInts()) // 1
 }
+
+

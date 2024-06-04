@@ -14,12 +14,12 @@ import (
 func reverseWords(s string) string {
 	arr := strings.Split(s, " ")
 	for i, v := range arr {
-		arr[i] = reverseString([]byte(v))
+		arr[i] = reverse_string([]byte(v))
 	}
 	return strings.Join(arr, " ")
 }
 
-func reverseString(s []byte) string {
+func reverse_string(s []byte) string {
 	j := len(s) - 1
 	for i := 0; i < j; i++ {
 		s[i], s[j] = s[j], s[i]
@@ -30,7 +30,7 @@ func reverseString(s []byte) string {
 
 func main() {
 	s := "Let's take LeetCode contest"
-	println(reverseWords(s))
+	println(reverseWords(s))		// s'teL ekat edoCteeL tsetnoc
 }
 
 /*

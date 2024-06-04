@@ -9,12 +9,37 @@ package main
  */
 
 func removeElement(nums []int, val int) int {
-	slow := 0
-	for fast := 0; fast < len(nums); fast++ {
-		if nums[fast] != val {
-			nums[fast], nums[slow] = nums[slow], nums[fast]
-			slow++
+	l := 0
+	for r := 0; r < len(nums); r++ {
+		if nums[r] != val {
+			nums[l], nums[r] = nums[r], nums[l]
+			l++
 		}
 	}
-	return slow
+	return l
+}
+
+
+func removeElement2(nums []int, val int) int {
+	l, r := 0, len(nums)
+	for l < r {
+		if nums[l] == val {
+			r--
+			nums[l] = nums[r]
+		} else {
+			l++
+		}
+	}
+	return l
+}
+
+func removeElement3(nums []int, val int) int {
+	l := 0
+	for _, v := range nums {
+		if v != val {
+			nums[l] = v
+			l++
+		}
+	}
+	return l
 }

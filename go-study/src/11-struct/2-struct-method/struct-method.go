@@ -37,3 +37,18 @@ func main() {
 	s3 := newStudent("yerc")
 	fmt.Println(*s3) // {yerc 0}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

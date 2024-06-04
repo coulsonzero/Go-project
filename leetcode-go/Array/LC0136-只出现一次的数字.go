@@ -11,15 +11,8 @@ import "sort"
  * 输出: 4
  */
 
-func singleNumber(nums []int) int {
-	single := 0
-	for _, num := range nums {
-		single ^= num
-	}
-	return single
-}
 
-func singleNumber2(nums []int) int {
+func singleNumber(nums []int) int {
 	sort.Ints(nums)
 	for i := 1; i < len(nums)-1; i += 2 {
 		if nums[i] == nums[i+1] {
@@ -29,7 +22,30 @@ func singleNumber2(nums []int) int {
 	return nums[len(nums)-1]
 }
 
+// map
+func singleNumber2(nums []int) int {
+	// sort.Ints(nums)
+	m := make(map[int]int)
+	for _, v := range nums {
+		m[v]++
+	}
+	for k, v := range m {
+		if v == 1 {
+			return k
+		}
+	}
+	return -1
+}
+
+func singleNumber3(nums []int) int {
+	single := 0
+	for _, num := range nums {
+		single ^= num
+	}
+	return single
+}
+
 func main() {
 	arr := []int{4, 1, 2, 1, 2, 3, 4}
-	println(singleNumber(arr))
+	println(singleNumber2(arr))
 }

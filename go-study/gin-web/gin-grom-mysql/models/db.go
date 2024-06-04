@@ -15,6 +15,7 @@ import (
 var DB *gorm.DB
 
 func SetupDB() *gorm.DB {
+	// load ini file
 	errEnv := godotenv.Load()
 	if errEnv != nil {
 		log.Fatal("Failed to load env file")
@@ -32,10 +33,11 @@ func SetupDB() *gorm.DB {
 		dbHost,
 		dbName,
 	)
+
+	// Gorm
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		NamingStrategy: schema.NamingStrategy{
-			// 设置全局表名禁用复数
-			SingularTable: true,
+			SingularTable: true, // 设置全局表名禁用复数
 		},
 	})
 

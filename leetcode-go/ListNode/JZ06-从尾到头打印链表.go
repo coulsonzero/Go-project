@@ -7,10 +7,10 @@ import "fmt"
  * 输出：[2,3,1]
  */
 
-// type ListNode struct {
-// 	Val  int
-// 	Next *ListNode
-// }
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 func reversePrint(head *ListNode) []int {
 	var ans []int
@@ -28,6 +28,15 @@ func reversePrint(head *ListNode) []int {
 	}
 
 	reverse(ans)
+	return ans
+}
+
+func reversePrint2(head *ListNode) []int {
+	ans := []int{}
+	for head != nil {
+		ans = append([]int{head.Val}, ans...)
+		head = head.Next
+	}
 	return ans
 }
 

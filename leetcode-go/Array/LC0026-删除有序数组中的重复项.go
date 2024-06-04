@@ -15,19 +15,14 @@ import "fmt"
 
 // 快慢指针法
 func removeDuplicates(nums []int) int {
-	if len(nums) == 0 {
-		return 0
-	}
-	s, f := 0, 1
-	for ; f < len(nums); f++ {
-		// nums[f] != num[f-1]
-		if nums[s] != nums[f] {
-			s++
-			nums[s] = nums[f]
+	l := 0
+	for r := 1; r < len(nums); r++ {
+		if nums[l] != nums[r] {
+			l++
+			nums[l] = nums[r]
 		}
 	}
-	// fmt.Printf("res: %v \n", nums[:s+1]) // 除重后的数组
-	return s + 1
+	return l + 1
 }
 
 func main() {

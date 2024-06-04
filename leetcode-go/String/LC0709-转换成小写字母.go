@@ -12,15 +12,34 @@ import "strings"
  * 输出："lovely"
  */
 
+func toLowerCase2(s string) string {
+	var buf strings.Builder
+	for i := 0; i < len(s); i++ {
+		if 'A' <= s[i] && s[i] <= 'Z' {
+			buf.WriteByte(s[i] + 32)
+		} else {
+			buf.WriteByte(s[i])
+		}
+	}
+
+
+	return buf.String()
+}
+
 func toLowerCase(s string) string {
 	var buf strings.Builder
 	for _, c := range s {
 		if 'A' <= c && c <= 'Z' {
-			buf.WriteRune(c ^ 32)
+			// buf.WriteRune(c ^ 32)
+			buf.WriteRune(c + 32)
 		} else {
 			buf.WriteRune(c)
 		}
 	}
-
 	return buf.String()
+}
+
+func main() {
+	println(toLowerCase("Hello"))  		// "hello"
+	println(toLowerCase("LOVELY"))  	// "lovely"
 }

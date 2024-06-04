@@ -14,3 +14,10 @@ func constArray() {
 	m['a'] = 3
 	fmt.Printf("type: %T, len: %d, value: %v", m, len(m), m)
 }
+
+
+
+
+
+
+

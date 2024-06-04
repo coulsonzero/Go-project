@@ -45,7 +45,7 @@ func threeSum1(nums []int) [][]int {
 	return arr
 }
 
-func twoSum(nums []int, target int, index int) [][]int {
+func threeSum(nums []int, target int, index int) [][]int {
 	var ret [][]int
 	m := make(map[int]int)
 	for i := 0; i < len(nums); i++ {
