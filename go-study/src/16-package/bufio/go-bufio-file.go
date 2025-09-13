@@ -16,7 +16,7 @@ func main() {
 
 	// zeroSql.PrintResult()
 	// println(zeroSql.matchTag)
-	// query, _ := zeroSql.LookupQuery("create-users-table")
+	query, _ := zeroSql.LookupQuery("create-users-table")
 	// query, _ := zeroSql.LookupQuery("create-user")
 	// query, _ := zeroSql.LookupQuery("find-users-by-email")
 	// query, _ := zeroSql.LookupQuery("drop-users-table")
@@ -30,7 +30,7 @@ func main() {
 	// println(zeroSql.Get("type").QueryAny("find-one-user-by-email"))
 	// println(zeroSql.Get("type").QueryAny("find-users-by-email"))
 	// println(zeroSql.Get("tag").QueryAny("drop-users-table"))
-	query, _ := zeroSql.Get("name").QueryAny("create-users-table")
+	// query, _ := zeroSql.Get("name").QueryAny("create-users-table")
 	fmt.Println(query)
 }
 

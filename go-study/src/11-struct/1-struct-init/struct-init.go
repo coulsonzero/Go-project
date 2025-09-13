@@ -11,8 +11,10 @@ func main() {
 	p.name = "John"
 	p.age = 20
 
-	p3 := person{"John", 20}            // 方式三：必须要写全！
-	p4 := person{name: "John", age: 20} // 方式四：字段初始化，相对比较灵活
+	// 方式三：必须要写全！
+	p3 := person{"John", 20}
+	// 方式四：字段初始化，相对比较灵活
+	p4 := person{name: "John", age: 20}
 
 	// 方式二: pointer init
 	p2 := new(person)

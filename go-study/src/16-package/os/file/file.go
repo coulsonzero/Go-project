@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"path/filepath"
@@ -29,6 +30,7 @@ var retainType []string = []string{"go"}
 
 func main() {
 
+	ReadFile()
 }
 
 // 创建文件
@@ -37,7 +39,6 @@ func CreateFile() {
 	file, err := os.Create("file.txt")
 	if err != nil {
 		log.Fatal(err)
-		return
 	}
 	fmt.Println(file.Name())
 }
@@ -61,12 +62,8 @@ func RenameFile() {
 
 // 读取文件
 func ReadFile() {
-	file, err := os.ReadFile("file.txt")
-	if err != nil {
-		log.Fatal(err)
-	} else {
-		fmt.Println(string(file))
-	}
+	file, _ := os.ReadFile("file.txt")
+	fmt.Println(string(file))
 }
 
 func readFile(filepath string) string {
@@ -94,13 +91,10 @@ body {
 
 // 读取目录
 func ReadDir() {
-	dir, err := os.ReadDir("./")
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		for _, file := range dir {
-			fmt.Println(file.Name())
-		}
+	dir, _ := os.ReadDir("./")
+
+	for _, file := range dir {
+		fmt.Println(file.Name())
 	}
 }
 

@@ -25,7 +25,4 @@ func makeDemo() {
 
 	var ch = make(chan int)
 	fmt.Println(ch) // 0x14000102060
-
-	var ch_bf = make(chan int, 2)
-	fmt.Println(ch_bf) // 0x140000ba000
 }

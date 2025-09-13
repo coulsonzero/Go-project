@@ -23,7 +23,7 @@ type Claims struct {
 const jwtSecret = "AllYourBest"
 
 func main() {
-	token, _ := GenerateToken2()
+	token, _ := GenerateToken()
 	fmt.Println(token)
 	// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJleHAiOjE2NzE5NjI4MDYsImlzcyI6Imp3dC1kZW1vIn0.fPILbgYX6SAvBDy-VOLo98YICru4s2ko70NEX2O1mxE
 	parseToken, _ := ParseToken(token)
@@ -33,20 +33,20 @@ func main() {
 }
 
 // GenerateToken 签发Token
+// func GenerateToken() (string, error) {
+// 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+// 		"sub":  "1234567890",
+// 		"name": "John Doe",
+// 		"iat":  1516239022,
+// 	})
+//
+// 	tokenString, err := token.SignedString([]byte(jwtSecret))
+//
+// 	fmt.Println(tokenString)
+// 	return tokenString, err
+// }
+
 func GenerateToken() (string, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"sub":  "1234567890",
-		"name": "John Doe",
-		"iat":  1516239022,
-	})
-
-	tokenString, err := token.SignedString([]byte(jwtSecret))
-
-	fmt.Println(tokenString)
-	return tokenString, err
-}
-
-func GenerateToken2() (string, error) {
 	claims := Claims{
 		Id: "1",
 		StandardClaims: jwt.StandardClaims{

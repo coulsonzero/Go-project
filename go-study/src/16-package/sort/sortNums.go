@@ -17,11 +17,6 @@ func sortNums(nums []int) []int {
 	return nums
 }
 
-func sortNums2(nums []int) []int {
-	sort.Sort(sort.IntSlice(nums))
-	return nums
-}
-
 func reverseNums(nums []int) []int {
 	sort.Sort(sort.Reverse(sort.IntSlice(nums)))
 	return nums

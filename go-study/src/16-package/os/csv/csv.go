@@ -10,7 +10,7 @@ import (
 func main() {
 	res := readCsv("./src/conf/test.csv")
 	printCsv(res)
-	writeCsv("./src/conf/res.csv", res)
+	// writeCsv("./src/conf/res.csv", res)
 }
 
 func readCsv(filename string) [][]string {

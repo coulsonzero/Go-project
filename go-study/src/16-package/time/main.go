@@ -8,7 +8,7 @@ import (
 
 func main() {
 	now := time.Now() // 获取当前时间
-	fmt.Println("now: ", now)
+	fmt.Println("now: ", now.Format(time.DateTime))
 	//
 	// year := now.Year() // 年
 	// month := now.Month()   // 月

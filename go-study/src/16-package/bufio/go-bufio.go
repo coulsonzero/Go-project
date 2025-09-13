@@ -29,6 +29,14 @@ func main() {
 	fmt.Println("========= close ==========")
 }
 
+func bufio_example() {
+	ans, _ := bufio.NewReader(os.Stdin).ReadString('\n')
+	print(ans)
+}
+
+// John Smith
+// John Smith
+
 func execCmd() {
 	lsOut, _ := exec.Command("bash", "-c", "ls -a -l -h").Output()
 	fmt.Printf("> ls -a -l -h: %s", string(lsOut))

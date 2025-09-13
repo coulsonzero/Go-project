@@ -18,21 +18,18 @@ import (
 // 如果带缓存(开启多个线程同步)则无法正确执行同步，需要调换接收方与发送方的位置
 
 func main() {
-	test()
+	noCacheChannel()
 }
 
-func test() {
+func noCacheChannel() {
 	ch := make(chan int) // 无缓存通道
 	go func() {
 		fmt.Println("hello world !")
-		// 接受数据
 		<-ch
 	}()
 	time.Sleep(time.Second * 3)
-	// 发送数据
 	ch <- 1
+
 	// defer close(ch)
-
 	// fmt.Println(<-ch) // fatal error: all goroutines are asleep - deadlock!
-
 }
